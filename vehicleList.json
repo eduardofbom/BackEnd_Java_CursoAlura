@@ -1,0 +1,26 @@
+[
+  {
+    "brand": "Honda",
+    "model": "Civic",
+    "year": 2015,
+    "kilometersDriven": 130000.0
+  },
+  {
+    "brand": "Hyundai",
+    "model": "Creta",
+    "year": 2020,
+    "kilometersDriven": 70000.0
+  },
+  {
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2024,
+    "kilometersDriven": 135000.0
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Tracker",
+    "year": 2022,
+    "kilometersDriven": 108000.0
+  }
+]

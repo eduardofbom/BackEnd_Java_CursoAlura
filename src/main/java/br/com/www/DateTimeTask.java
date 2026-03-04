@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-public class DateTimeTasks {
+public class DateTimeTask {
     public static void main(String[] args) {
         String task = "Send weekly report";
 
@@ -14,7 +14,7 @@ public class DateTimeTasks {
         DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String dateTaskFormatted = dateTask.format(formatDate);
 
-        DateTimeFormatter formatTime = DateTimeFormatter.ofPattern("HH:mm:ss");
+        DateTimeFormatter formatTime = DateTimeFormatter.ofPattern("HH:mm");
         String timeTaskFormatted = timeTask.format(formatTime);
 
         System.out.printf("""

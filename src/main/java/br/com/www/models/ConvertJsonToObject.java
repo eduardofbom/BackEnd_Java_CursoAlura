@@ -3,7 +3,7 @@ package br.com.www.models;
 import com.google.gson.Gson;
 
 record Publisher(String name, String city) {}
-record Book(String title, String author, Publisher publisher) {}
+record BookRecord(String title, String author, Publisher publisher) {}
 
 public class ConvertJsonToObject {
     public static void main(String[] args) {
@@ -17,7 +17,7 @@ public class ConvertJsonToObject {
                 }
                 """;
 
-        Book aventurasDoJava = gson.fromJson(jsonBook, Book.class);
+        BookRecord aventurasDoJava = gson.fromJson(jsonBook, BookRecord.class);
         System.out.println(aventurasDoJava);
     }
 }

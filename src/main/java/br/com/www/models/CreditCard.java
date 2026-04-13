@@ -4,7 +4,7 @@ import br.com.www.interfaces.Taxable;
 
 public class CreditCard extends Payment implements Taxable {
 
-    private double taxRate;
+    private final double taxRate;
 
     public CreditCard(double value) {
         super(value);
@@ -20,7 +20,7 @@ public class CreditCard extends Payment implements Taxable {
 
     @Override
     public double calculateTax() {
-        return value * (1-3/100);
+        return value * this.taxRate/100.0;
     }
 
     @Override

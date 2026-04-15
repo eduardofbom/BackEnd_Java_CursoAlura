@@ -1,22 +1,26 @@
 package br.com.www;
 
-
-import br.com.www.models.BankSlip;
-import br.com.www.models.CreditCard;
-import br.com.www.models.Payment;
-import br.com.www.models.Pix;
+import br.com.www.models.ElectronicDevice;
 
 public class Main {
     public static void main(String[] args) {
 
-        Payment creditCard = new CreditCard(250.0);
-        creditCard.confirmPayment();
+        ElectronicDevice lamp = new ElectronicDevice("Lamp");
+        ElectronicDevice airConditioning = new ElectronicDevice(true,"Air conditioning");
 
-        Payment bankSlip = new BankSlip(500.00);
-        bankSlip.confirmPayment();
+        lamp.turnOff();
+        lamp.turnOn();
+        lamp.turnOn();
+        lamp.turnOff();
 
-        Payment pix = new Pix(300.00);
-        pix.confirmPayment();
+        System.out.println();
+        System.out.println("----------------");
+        System.out.println();
+
+        airConditioning.turnOn();
+        airConditioning.turnOff();
+        airConditioning.turnOff();
+        airConditioning.turnOn();
 
     }
 }

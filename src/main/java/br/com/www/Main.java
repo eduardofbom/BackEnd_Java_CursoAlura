@@ -1,26 +1,23 @@
 package br.com.www;
 
-import br.com.www.models.ElectronicDevice;
+
+import java.util.List;
 
 public class Main {
+
     public static void main(String[] args) {
 
-        ElectronicDevice lamp = new ElectronicDevice("Lamp");
-        ElectronicDevice airConditioning = new ElectronicDevice(true,"Air conditioning");
+        List<Double> grades = List.of(7.5, 8.0, 6.5, 9.0, 10.0);
 
-        lamp.turnOff();
-        lamp.turnOn();
-        lamp.turnOn();
-        lamp.turnOff();
+        double sumGrades = grades.stream().reduce(0.0, Double::sum);
+        double averageGrades = sumGrades / grades.size();
 
-        System.out.println();
-        System.out.println("----------------");
-        System.out.println();
+        double highestGrade = grades.stream().max(Double::compare).orElse(0.0);
+        double lowestGrade = grades.stream().min(Double::compare).orElse(0.0);
 
-        airConditioning.turnOn();
-        airConditioning.turnOff();
-        airConditioning.turnOff();
-        airConditioning.turnOn();
+        System.out.println("Average grades: " + averageGrades);
+        System.out.println("Highest grade: " + highestGrade);
+        System.out.println("Lowest grade: " + lowestGrade);
 
     }
 }

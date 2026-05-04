@@ -1,9 +1,18 @@
 package br.com.www.models;
 
+import java.util.Objects;
+
 public class Product {
     private String name;
     private double price;
     private Integer quantity;
+    private String category;
+
+    public Product(String name, double price, String category) {
+        this.name = name;
+        this.price = price;
+        this.category = category;
+    }
 
     public Product(String name, double price) {
         this.name = name;
@@ -48,6 +57,9 @@ public class Product {
     public Integer getQuantity() {
         return quantity;
     }
+    public String getCategory() {
+        return category;
+    }
 
     public void showSpecifications() {
         System.out.printf("""
@@ -67,6 +79,17 @@ public class Product {
             return true;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", category='" + category + '\'' +
+                '}';
+    }
+
+    // ---
 
     public static void main(String[] args) {
 //        Product product1 = new Product("Gamer mouse", 159.9, 25);

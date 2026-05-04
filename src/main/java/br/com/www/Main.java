@@ -20,10 +20,11 @@ public class Main {
 
         String category = "Electronics";
         products.stream()
-                .filter(p -> (p.getCategory().equals(category)   && p.getPrice() < 1000))
+                .filter(p -> p.getCategory().equals(category))
                 .sorted(
                         (p1,p2) -> Double.compare(p1.getPrice(), p2.getPrice())
                 )
+                .limit(3)
                 .forEach(System.out::println);
 
     }

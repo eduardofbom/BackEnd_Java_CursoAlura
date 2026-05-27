@@ -1,34 +1,48 @@
 package br.com.www;
 
-import br.com.www.models.Product;
-
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        List<Product> products = Arrays.asList(
-                new Product("Smartphone", 800.0, "Electronics"),
-                new Product("Notebook", 1500.0, "Electronics"),
-                new Product("Keyboard", 200.0, "Electronics"),
-                new Product("Chair", 300.0, "Furniture"),
-                new Product("Monitor", 900.0, "Electronics"),
-                new Product("Table", 700.0, "Furniture")
-        );
-
-        Map<String, Double> totalPriceByCategory = products.stream()
-                .collect(Collectors.groupingBy(Product::getCategory,
-                        Collectors.summingDouble(Product::getPrice)));
-        System.out.println(totalPriceByCategory);
+        System.out.println(getFirstAndLastName("  João Carlos Silva   ")); // Saída: "João Silva"
+        System.out.println(getFirstAndLastName("Maria   ")); // Saída: "Maria"
 
     }
+
+    private static String getFirstAndLastName(String completeName) {
+        List<String> nameInList = List.of(completeName.trim().split(" "));
+
+        if(nameInList.size() > 1) {
+            return nameInList.getFirst() + " " + nameInList.getLast();
+        } else {
+            return nameInList.getFirst();
+        }
+    }
+
 }
 
 
 
 
 /*
+3 - Implemente um método que recebe uma String representando um nome completo separado por espaços. O método deve
+    retornar o primeiro e o último nome após remover os espaços desnecessários.
 
+
+public class Main {
+
+    public static void main(String[] args) {
+           System.out.println(obterPrimeiroEUltimoNome("  João Carlos Silva   ")); // Saída: "João Silva"
+System.out.println(obterPrimeiroEUltimoNome("Maria   ")); // Saída: "Maria"
+
+
+    }
+
+public static String obterPrimeiroEUltimoNome(String nomeCompleto) {
+    // Implementar aqui
+}
+
+}
  */
